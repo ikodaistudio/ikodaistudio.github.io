@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Blurpest Studio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Blurpest, studio di graphic design immaginario. Demo di animazioni web realizzata da IkodaI Studio.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#5B2EFF">
+<script>
+  // Attiva il caricamento animato solo se il dispositivo non chiede movimento ridotto.
+  // Se gli script non partono entro 5 secondi, la pagina torna visibile da sola.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('js');
+    setTimeout(function(){ if(!window.__blurp) document.documentElement.classList.remove('js'); }, 5000);
+  }
+</script>
+<link rel="preload" href="assets/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__cols"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="loader__num" id="loaderNum">000</div>
+  <div class="loader__label">BLURPEST / CARICAMENTO GRIGLIA</div>
+</div>
+
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="top">
+  <p class="top__note">Studio immaginario. Demo di animazioni di <a href="https://ikodaistudio.github.io">IkodaI Studio</a></p>
+  <div class="top__bar">
+    <a class="logo" href="#hero" aria-label="Blurpest, torna all'inizio">BLURPEST<sup>®</sup></a>
+    <span class="top__clock" id="clock">00:00:00</span>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">MENU</button>
+  </div>
+</header>
+
+<nav class="menu" id="menu" aria-label="Menu principale" hidden>
+  <ul>
+    <li><a href="#manifesto">Manifesto</a></li>
+    <li><a href="#dissezione">Dissezione</a></li>
+    <li><a href="#lavori">Lavori</a></li>
+    <li><a href="#servizi">Servizi</a></li>
+    <li><a href="#laboratorio">Laboratorio</a></li>
+    <li><a href="#contatti">Contatti</a></li>
+  </ul>
+  <p class="menu__foot">STUDIO GRAFICO INDIPENDENTE · EST. 2026</p>
+</nav>
+
+<main>
+
+<section class="hero" id="hero">
+  <div class="hero__grid" aria-hidden="true"></div>
+  <span class="shape shape--sq" aria-hidden="true"></span>
+  <span class="shape shape--ci" aria-hidden="true"></span>
+  <span class="shape shape--bar" aria-hidden="true"></span>
+  <h1 class="hero__title" id="heroTitle" aria-label="Blurpest">
+    <span class="hero__line" aria-hidden="true">BLURP</span>
+    <span class="hero__line hero__line--2" aria-hidden="true">EST</span>
+  </h1>
+  <div class="hero__meta">
+    <p class="hero__sub">Identità visive, editoria e tipografia sperimentale per marchi che non vogliono passare inosservati.</p>
+    <p class="hero__hint mono">↯ TOCCA E TRASCINA SULLE LETTERE</p>
+  </div>
+  <svg class="sticker" id="sticker" viewBox="0 0 200 200" aria-hidden="true">
+    <defs><path id="circ" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+    <circle cx="100" cy="100" r="98" class="sticker__bg"/>
+    <text><textPath href="#circ">BLURPEST ✶ STUDIO GRAFICO ✶ ROMPE LA GRIGLIA ✶ </textPath></text>
+    <text x="100" y="116" text-anchor="middle" class="sticker__mid">✶</text>
+  </svg>
+</section>
+
+<div class="marquees" aria-hidden="true">
+  <div class="marquee marquee--a"><div class="marquee__track">ROMPIAMO LA GRIGLIA ✶ SMONTIAMO I MARCHI ✶ TIPOGRAFIA PESANTE ✶ ROMPIAMO LA GRIGLIA ✶ SMONTIAMO I MARCHI ✶ TIPOGRAFIA PESANTE ✶ </div></div>
+  <div class="marquee marquee--b"><div class="marquee__track">IDENTITÀ ▲ EDITORIA ▲ MOTION ▲ PACKAGING ▲ SEGNALETICA ▲ IDENTITÀ ▲ EDITORIA ▲ MOTION ▲ PACKAGING ▲ SEGNALETICA ▲ </div></div>
+</div>
+
+<section class="manifesto" id="manifesto">
+  <p class="label mono">[01] MANIFESTO</p>
+  <h2 class="manifesto__text" id="manifestoText">Smontiamo i marchi pezzo per pezzo, guardiamo come sono fatti dentro e li rimontiamo più forti. Ogni lettera ha un peso. Ogni spazio vuoto è una scelta. Ogni progetto parte da un foglio bianco e finisce in una forma che si riconosce da lontano.</h2>
+</section>
+
+<section class="dissect" id="dissezione">
+  <div class="dissect__pin">
+    <p class="label mono">[02] DISSEZIONE <span id="dissectState">FORMA INTEGRA</span></p>
+    <div class="dissect__stage">
+      <div class="tiles" id="tiles" aria-hidden="true"></div>
+    </div>
+    <h2 class="dissect__title">Ogni marchio si può smontare <em>e ricostruire</em></h2>
+  </div>
+</section>
+
+<section class="works" id="lavori">
+  <div class="works__pin">
+    <div class="works__head">
+      <p class="label mono">[03] LAVORI SELEZIONATI</p>
+      <p class="works__count mono"><span id="workIdx">01</span> / 05</p>
+    </div>
+    <div class="works__track" id="worksTrack">
+      <article class="card">
+        <div class="card__art art-1" aria-hidden="true"><span class="a1-fn">FN</span><span class="a1-bar"></span><span class="a1-tag">FONDERIA · DAL 1952</span></div>
+        <div class="card__info"><h3>Ferro Nero</h3><p>Identità per una fonderia artistica</p></div>
+      </article>
+      <article class="card">
+        <div class="card__art art-2" aria-hidden="true"><span class="a2-disc"></span><span class="a2-hole"></span><span class="a2-t">OTTOBRE</span></div>
+        <div class="card__info"><h3>Ottobre Records</h3><p>Copertine per un'etichetta indipendente</p></div>
+      </article>
+      <article class="card">
+        <div class="card__art art-3" aria-hidden="true"><span class="a3-arrow">→</span><span class="a3-t">USCITA</span><span class="a3-n">00</span></div>
+        <div class="card__info"><h3>Museo del Vuoto</h3><p>Segnaletica per uno spazio espositivo</p></div>
+      </article>
+      <article class="card">
+        <div class="card__art art-4" aria-hidden="true"><span class="a4-stripes"></span><span class="a4-t">GRANO<br>DURO</span><span class="a4-g">500g</span></div>
+        <div class="card__info"><h3>Grano Duro</h3><p>Packaging per un pastificio</p></div>
+      </article>
+      <article class="card">
+        <div class="card__art art-5" aria-hidden="true"><span>R</span><span>U</span><span>M</span><span>O</span><span>R</span><span>E</span></div>
+        <div class="card__info"><h3>Festival Rumore</h3><p>Manifesti per un festival di musica elettronica</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="servizi">
+  <p class="label mono">[04] SERVIZI</p>
+  <h2 class="services__title">Cosa facciamo</h2>
+  <ul class="services__list">
+    <li class="srv"><span class="srv__n mono">A</span><span class="srv__t" data-txt="IDENTITÀ VISIVA">IDENTITÀ VISIVA</span><span class="srv__d mono">Logo, sistema, regole</span></li>
+    <li class="srv"><span class="srv__n mono">B</span><span class="srv__t" data-txt="EDITORIA">EDITORIA</span><span class="srv__d mono">Libri, riviste, cataloghi</span></li>
+    <li class="srv"><span class="srv__n mono">C</span><span class="srv__t" data-txt="TIPOGRAFIA">TIPOGRAFIA</span><span class="srv__d mono">Caratteri su misura</span></li>
+    <li class="srv"><span class="srv__n mono">D</span><span class="srv__t" data-txt="MOTION">MOTION</span><span class="srv__d mono">Marchi che si muovono</span></li>
+    <li class="srv"><span class="srv__n mono">E</span><span class="srv__t" data-txt="PACKAGING">PACKAGING</span><span class="srv__d mono">Scatole, etichette, sacchetti</span></li>
+    <li class="srv"><span class="srv__n mono">F</span><span class="srv__t" data-txt="SEGNALETICA">SEGNALETICA</span><span class="srv__d mono">Spazi che si leggono</span></li>
+  </ul>
+</section>
+
+<section class="lab" id="laboratorio">
+  <p class="label mono">[05] LABORATORIO</p>
+  <h2 class="lab__title">Tocca, rimescola, lancia</h2>
+
+  <div class="flipwrap">
+    <div class="flip" id="flip" aria-hidden="true">
+      <div class="fb fb--1">B</div><div class="fb fb--2">✶</div><div class="fb fb--3">L</div>
+      <div class="fb fb--4"></div><div class="fb fb--5">U</div><div class="fb fb--6">R</div>
+      <div class="fb fb--7">●</div><div class="fb fb--8">P</div><div class="fb fb--9">▲</div>
+    </div>
+    <button class="btn" id="shuffleBtn">RIMESCOLA LA GRIGLIA</button>
+  </div>
+
+  <p class="lab__hint mono">↯ TRASCINA E LANCIA GLI ADESIVI</p>
+  <div class="throw" id="throw">
+    <span class="stk stk--1">CIAO</span>
+    <span class="stk stk--2">✶</span>
+    <span class="stk stk--3">PESO 900</span>
+    <span class="stk stk--4">NO GRIGLIA</span>
+    <span class="stk stk--5">●</span>
+    <span class="stk stk--6">KERNING</span>
+  </div>
+</section>
+
+<section class="cta" id="contatti">
+  <div class="cta__layer cta__layer--base">
+    <p class="label mono">[06] FINE</p>
+    <p class="cta__big">BLURPEST<br>NON ESISTE</p>
+    <p class="cta__small">Le animazioni invece sì, e possono finire sul sito della tua attività.</p>
+  </div>
+  <div class="cta__layer cta__layer--top" id="ctaTop" aria-hidden="true">
+    <p class="label mono">[06] FINE</p>
+    <p class="cta__big">QUESTO<br>SITO SÌ</p>
+    <p class="cta__small">Le animazioni invece sì, e possono finire sul sito della tua attività.</p>
+  </div>
+  <div class="cta__links">
+    <a class="btn btn--light" href="https://ikodaistudio.github.io">IKODAI STUDIO ↗</a>
+    <a class="btn btn--light" href="https://wa.me/393345485432">WHATSAPP ↗</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot mono">
+  <span>BLURPEST® È UNO STUDIO IMMAGINARIO</span>
+  <span>DEMO DI ANIMAZIONI · <a href="https://ikodaistudio.github.io">IKODAI STUDIO</a> · 2026</span>
+</footer>
+
+<script src="assets/js/gsap/gsap.min.js"></script>
+<script src="assets/js/gsap/ScrollTrigger.min.js"></script>
+<script src="assets/js/gsap/SplitText.min.js"></script>
+<script src="assets/js/gsap/ScrambleTextPlugin.min.js"></script>
+<script src="assets/js/gsap/Flip.min.js"></script>
+<script src="assets/js/gsap/Draggable.min.js"></script>
+<script src="assets/js/gsap/InertiaPlugin.min.js"></script>
+<script src="assets/js/gsap/CustomEase.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
